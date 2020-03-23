@@ -1,0 +1,16 @@
+FROM rocker/r-base
+
+LABEL maintainer "Arnfinn Hykkerud Steindal <arnfinn.steindal@gmail.com>"
+
+# system libraries of general use
+RUN apt-get update && apt-get install -y \
+    libcurl4-gnutls-dev \
+    libssl-dev
+
+# basic R functionality
+RUN R -e "install.packages(c('remotes'), repos='https://cloud.r-project.org/')"
+
+# install package dependencies
+RUN R -e "install.packages(c('shiny', 'shinythemes', 'shinyWidgets', 'rsconnect', 'rmarkdown', 'dplyr', 'tidyr', 'lazyeval', 'magrittr', 'rlang', 'knitr'))"
+
+CMD ["R"]
