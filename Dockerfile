@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
 RUN R -e "install.packages(c('remotes'), repos='https://cloud.r-project.org/')"
 
 # install package dependencies
-RUN R -e "install.packages(c('shiny', 'shinythemes', 'shinyWidgets', 'rsconnect', 'rmarkdown', 'dplyr', 'tidyr', 'lazyeval', 'magrittr', 'rlang', 'knitr'))"
+RUN R -e "install.packages(c('shiny', 'shinythemes', 'shinyWidgets', 'dplyr', 'tidyr', 'stringi', 'lazyeval', 'magrittr', 'rlang', 'yaml', 'utils', 'methods', 'stats'))"
+
+RUN R -e "remotes::install_github('rstudio/shiny')"
 
 CMD ["R"]
