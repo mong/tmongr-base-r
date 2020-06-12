@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build --build-arg GITHUB_PAT=${GITHUB_PAT} -t hnskde/tmongr-base-r .
+  - docker build -t hnskde/tmongr-base-r .
   - docker run -d -ti --name tmongr-base-r hnskde/tmongr-base-r
 
 script:
