@@ -4,7 +4,8 @@ LABEL maintainer "Arnfinn Hykkerud Steindal <arnfinn.steindal@gmail.com>"
 
 # system libraries of general use
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libcurl4-gnutls-dev=7.74.\* \
+    libcurl3-gnutls=7.79.1-3~exp2 \
+    libcurl4-gnutls-dev=7.79.\* \
     libssl-dev=1.1.\* \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
