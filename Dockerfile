@@ -3,10 +3,11 @@ FROM rocker/r-base:4.1.2
 LABEL maintainer "Arnfinn Hykkerud Steindal <arnfinn.steindal@gmail.com>"
 
 # system libraries of general use
+# hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libcurl3-gnutls=7.79.1-3~exp2 \
-    libcurl4-gnutls-dev=7.79.\* \
-    libssl-dev=1.1.\* \
+    libcurl3-gnutls \
+    libcurl4-gnutls-dev \
+    libssl-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # basic R functionality
