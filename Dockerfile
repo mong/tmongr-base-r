@@ -1,4 +1,4 @@
-FROM rocker/r-base:4.3.0
+FROM rocker/r-base:4.3.1
 
 LABEL maintainer "Arnfinn Hykkerud Steindal <arnfinn.steindal@gmail.com>"
 
